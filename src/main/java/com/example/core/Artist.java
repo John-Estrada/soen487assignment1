@@ -8,6 +8,7 @@ public class Artist {
     private String lastName;
     private String bio;
 
+    //used to ensure that there are not two artists with the same nickname
     private static ArrayList<String> usedNickNames = new ArrayList<String>();
     private static ArrayList<Artist> allArtists = new ArrayList<Artist>();
 
@@ -60,6 +61,10 @@ public class Artist {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public static void removeNickName(String nickname) {
+        usedNickNames.remove(nickname);
     }
 
     @Override

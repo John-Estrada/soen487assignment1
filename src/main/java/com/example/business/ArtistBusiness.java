@@ -17,5 +17,6 @@ public class ArtistBusiness {
 
     public static void removeArtist(Artist artist) {
         allArtists.remove(artist);
+        Artist.removeNickName(artist.getNickName());
     }
 }

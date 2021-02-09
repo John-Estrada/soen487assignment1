@@ -9,6 +9,7 @@ public class Album {
     private int year;
     private Artist artist;
 
+    //used to ensure that the isrc is unique - incremented every time a new album is created
     private static int currentIsrc=0;
 
     public Album(String title, String description, int year, Artist artist) {
