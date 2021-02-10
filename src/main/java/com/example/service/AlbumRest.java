@@ -42,12 +42,18 @@ public class AlbumRest {
     @POST
     @Path("add/{title}/{description}/{year}/{artistNickName}")
     public String addAlbum(@PathParam("title") String title, @PathParam("description") String description, @PathParam("year") int year, @PathParam("artistNickName") String artistNickName) throws Exception {
-        Artist artist = new Artist(artistNickName, "testfirst", "testlast", "testbio");
+        Artist artist = ArtistBusiness.getAllArtists().stream().filter(a -> a.getNickName().equals(artistNickName)).findFirst().orElse(null);
+
+        if (artist == null){
+            artist = new Artist(artistNickName, "Unknown", "Unknown", "None");
+            ArtistBusiness.insertArtist(artist);
+        }
+
         Album album = new Album(title, description, year, artist);
         AlbumBusiness.addAlbum(album);
         System.out.println("Added album " + album.toString());
 
-        return "Success";
+        return "Successfully created album " + album.toString();
     }
 
     @PUT
@@ -58,14 +64,16 @@ public class AlbumRest {
 
         Album albumToUpdate = AlbumBusiness.getAllAlbums().stream().filter(album -> album.getIsrc() == isrc).findFirst().orElse(null);
         Artist artist = ArtistBusiness.getAllArtists().stream().filter(a -> a.getNickName().equals(artistNickName)).findFirst().orElse(null);
+        if (artist == null){
+            artist = new Artist(artistNickName, "Unknown", "Unknown", "None");
+            ArtistBusiness.insertArtist(artist);
+        }
 
         if (albumToUpdate != null) {
             albumToUpdate.setTitle(title);
             albumToUpdate.setDescription(description);
             albumToUpdate.setYear(year);
-            if (artist!=null) {
-                albumToUpdate.setArtist(artist);
-            }
+            albumToUpdate.setArtist(artist);
 
             System.out.println(SUCCESS_TEXT);
             return SUCCESS_TEXT;

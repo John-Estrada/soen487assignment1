@@ -67,6 +67,10 @@ public class Artist {
         usedNickNames.remove(nickname);
     }
 
+    public static ArrayList<String> getUsedNickNames() {
+        return usedNickNames;
+    }
+
     @Override
     public String toString() {
         return "Artist{" +

@@ -12,6 +12,13 @@ public class ArtistClient {
         try (CloseableHttpClient client = HttpClients.createDefault()) {
             HttpPost httpPost = new HttpPost(String.format("http://localhost:8080/repository/artist/add/%s/%s/%s/%s", nickname, firstname, lastname, bio));
             CloseableHttpResponse response = client.execute(httpPost);
+            Scanner sc = new Scanner(response.getEntity().getContent());
+            StringBuilder sb = new StringBuilder();
+            while(sc.hasNext()) {
+                sb.append(sc.nextLine());
+                sb.append("\n");
+            }
+            System.out.println(sb.toString());
             response.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -22,6 +29,13 @@ public class ArtistClient {
         try (CloseableHttpClient client = HttpClients.createDefault()) {
             HttpPut httpPut = new HttpPut(String.format("http://localhost:8080/repository/artist/update/%s/%s/%s/%s", nickname, firstname, lastname, bio));
             CloseableHttpResponse response = client.execute(httpPut);
+            Scanner sc = new Scanner(response.getEntity().getContent());
+            StringBuilder sb = new StringBuilder();
+            while(sc.hasNext()) {
+                sb.append(sc.nextLine());
+                sb.append("\n");
+            }
+            System.out.println(sb.toString());
             response.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -32,6 +46,13 @@ public class ArtistClient {
         try (CloseableHttpClient client = HttpClients.createDefault()) {
             HttpDelete httpDelete = new HttpDelete(String.format("http://localhost:8080/repository/artist/delete/%s", nickname));
             CloseableHttpResponse response = client.execute(httpDelete);
+            Scanner sc = new Scanner(response.getEntity().getContent());
+            StringBuilder sb = new StringBuilder();
+            while(sc.hasNext()) {
+                sb.append(sc.nextLine());
+                sb.append("\n");
+            }
+            System.out.println(sb.toString());
             response.close();
         } catch (IOException e) {
             e.printStackTrace();

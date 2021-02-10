@@ -43,7 +43,6 @@ public class Console {
                                 params = scanner.nextLine().split(" ");
                                 try {
                                     AlbumClient.createAlbum(params[0], params[1], Integer.parseInt(params[2]), params[3]);
-                                    System.out.println("Successfully created album");
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -105,7 +104,6 @@ public class Console {
                                 params = scanner.nextLine().split(" ");
                                 try {
                                     ArtistClient.createArtist(params[0], params[1], params[2], params[3]);
-                                    System.out.println("Successfully created artist");
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -115,7 +113,6 @@ public class Console {
                                 params = scanner.nextLine().split(" ");
                                 try {
                                     ArtistClient.updateArtist(params[0], params[1], params[2], params[3]);
-                                    System.out.println("Successfully updated artist");
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -125,7 +122,6 @@ public class Console {
                                 params = scanner.nextLine().split(" ");
                                 try {
                                     ArtistClient.deleteArtist(params[0]);
-                                    System.out.println("Successfully deleted artist");
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
