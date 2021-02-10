@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.example</OriginalElement>
+  <nodes>
+    <node x="42.5" y="100.0">com.example.core.Album</node>
+    <node x="242.16666666666669" y="100.0">com.example.business.ArtistBusiness</node>
+    <node x="10.5" y="180.0">com.example.business.AlbumBusiness</node>
+    <node x="183.5" y="180.0">com.example.service.ArtistRest</node>
+    <node x="164.0" y="345.0">com.example.client.AlbumClient</node>
+    <node x="345.0" y="345.0">com.example.service.ArtistServlet</node>
+    <node x="100.0" y="425.0">com.example.client.Console</node>
+    <node x="0.0" y="500.0">com.example.service.Main</node>
+    <node x="220.83333333333337" y="0.0">com.example.core.Artist</node>
+    <node x="211.0644444444445" y="270.0">com.example.service.AlbumRest</node>
+    <node x="0.0" y="345.0">com.example.client.ArtistClient</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="248.5" y="265.0" />
+  <SelectedNodes>
+    <node>com.example.core.Album</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

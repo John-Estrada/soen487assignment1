@@ -1,6 +1,7 @@
 package com.example.business;
 
 import com.example.core.Artist;
+import com.example.service.ArtistServlet;
 
 import java.util.ArrayList;
 
