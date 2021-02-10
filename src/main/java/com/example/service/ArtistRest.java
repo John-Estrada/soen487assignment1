@@ -5,7 +5,9 @@ import com.example.core.Artist;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Path("artist")
 public class ArtistRest {
@@ -13,8 +15,16 @@ public class ArtistRest {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("all")
     public String getAll(){
-        return ArtistBusiness.getAllArtists().stream().map(Object::toString).collect(Collectors.joining(".\n"));
+        ArrayList<Artist> all = ArtistBusiness.getAllArtists();
+        StringBuilder sb = new StringBuilder();
+        for (Artist artist : all) {
+            sb.append(artist.toListItem());
+            sb.append("\n");
+        }
+//        return ArtistBusiness.getAllArtists().stream().map(Object::toString).collect(Collectors.joining(".\n"));
+        return sb.toString();
     }
+
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)

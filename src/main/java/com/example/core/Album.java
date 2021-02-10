@@ -66,4 +66,8 @@ public class Album {
                 ", artist=" + artist +
                 '}';
     }
+
+    public String toListItem() {
+        return "ISRC: " + isrc + ", Title: " + title;
+    }
 }

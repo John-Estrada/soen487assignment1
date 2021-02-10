@@ -76,4 +76,8 @@ public class Artist {
                 ", bio='" + bio + '\'' +
                 '}';
     }
+
+    public String toListItem() {
+        return "Nickname: " + nickName + ", Full Name: " + firstName + " " + lastName;
+    }
 }
